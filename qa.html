@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="./style/nav.css" />
+  <link rel="stylesheet" type="text/css" href="./style/qalist.css" />
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="./style/nnav.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+  <nav class="header">
+
+    <div class="flex">
+
+      <!-- Logo -->
+      <div class="logo"><a href="#"><img src="./img/logohorizen.png" alt=""></a></div>
+
+      <!-- Navbar Menu -->
+      <div class="nav">
+        <ul class="nav__list">
+          <li class="nav__menu">電腦元件介紹
+            <ul class="nav__menu-lists">
+              <li class="nav__menu-items"><a href="#">CPU</a></li>
+              <li class="nav__menu-items"><a href="#">顯示卡</a></li>
+              <li class="nav__menu-items"><a href="#">RAM</a></li>
+              <li class="nav__menu-items"><a href="#">硬碟</a></li>
+              <li class="nav__menu-items"><a href="#">其他組件</a></li>
+            </ul>
+          </li>
+          <li class="nav__menu">筆電客製化
+            <ul class="nav__menu-lists">
+              <li class="nav__menu-items"><a href="#">自由搭配</a></li>
+              <li class="nav__menu-items"><a href="#">系統推薦</a></li>
+            </ul>
+          </li>
+          <li class="nav__menu">服務與支援
+            <ul class="nav__menu-lists">
+              <li class="nav__menu-items"><a href="#">最新消息</a></li>
+              <li class="nav__menu-items"><a href="#">常見問題</a></li>
+              <li class="nav__menu-items"><a href="#">聯絡我們</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Navbar icons -->
+      <div class="icons">
+        <a href="./keep2.html"><i class="fas fa-bookmark"></i></a>
+        <div id="user-btn" class="fas fa-user"></div>
+      </div>
+
+      <!-- Navbar user -->
+      <div class="profile">
+        <p class="name">LapTop</p>
+        <div class="profileflex">
+          <a href="profile.html" class="btn">個人檔案</a>
+          <a href="#" class="delete-btn">登&nbsp&nbsp出</a>
+        </div>
+        <p class="account"><a href="login2.html">登入 / 註冊</a></p>
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- 背景 -->
+  <div class="bgAnimation" id="bgAnimation">
+    <!-- <div class="backgroundAmim"></div> -->
+  </div>
+
+  <!-- 標題 -->
+  <h1 class="title">常見問題</h1>
+  <h1 class="title2">常見問題</h1>
+
+
+  <!-- <div class="text">漏斗</div> -->
+  <div class="loudou"></div>
+
+  <!-- <div class="text">漏斗2</div> -->
+  <div class="loudou2"></div>
+
+  <!-- 分隔線 -->
+  <hr>
+  <hr>
+  <hr>
+
+  <!-- 四大零件選單 -->
+  <div class="qalistTitle">
+    <ul class="qalistTitleUl">
+      <li class="active" onclick="showPanel(0)">
+        <a href="javascript:;" data-tablink="qaone">中央處理器（CPU）</a>
+      </li>
+      <li class="active" onclick="showPanel(1)">
+        <a href="javascript:;" data-tablink="qatwo">顯示卡（GPU）</a>
+      </li>
+      <li class="active" onclick="showPanel(2)">
+        <a href="javascript:;" data-tablink="qathree">記憶體（RAM）</a>
+      </li>
+      <li class="active" onclick="showPanel(3)">
+        <a href="javascript:;" data-tablink="qafour">其他（Other）</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 四大零件問題內容 -->
+  <div class="qalistBody">
+    <div class="qalistBodyInner" id="qaone">
+      <div class="qalistBodyInnerTwo">
+        <h3 onclick="switch_content('first')">什麼是中央處理器CPU?</h3>
+        <div id="first">
+          <p>CPU相當於是電腦的心臟，主要負責解釋電腦指令以及處理電腦軟體中的資料。</p>
+        </div>
+      </div>
+      <div class="qalistBodyInnerTwo">
+        <h3 onclick="switch_content('first2')">什麼是中央處理器CPU散熱器?</h3>
+        <div id="first2">
+          <p>CPU散熱器是安裝在CPU上協助CPU在運轉時進行散熱的零件。依據散熱介質的差異，可以分為水冷跟空冷兩大類，後者還可依據外觀跟風流的方向細分為塔型散熱器、下吹式散熱器和上吹式散熱器。</p>
+        </div>
+      </div>
+    </div>
+    <div class="qalistBodyInner" id="qatwo">
+      <div class="qalistBodyInnerTwo">
+        <h3 onclick="switch_content('second')">什麼是顯示卡GPU?</h3>
+        <div id="second">
+          <p>顯示卡，主要作用是將電腦主機的輸出訊息轉換成文字、圖像、顏色等，傳送到螢幕上顯示。</p>
+        </div>
+      </div>
+      <div class="qalistBodyInnerTwo">
+        <h3 onclick="switch_content('second2')">顯示卡GPU的核心?</h3>
+        <div id="second2">
+          <p>GPU其實佔整個顯示卡面積的比例非常小，整個顯示卡大部分空間其實都是電路板，這也解釋了整合顯示卡或者筆記本顯示卡在主機板上都是非常不起眼的原因，因為其實單論核心的話GPU往往還真的比CPU沒大沒小差不多少 </p>
+          
+        </div>
+      </div>
+    </div>
+    <div class="qalistBodyInner" id="qathree">
+      <div class="qalistBodyInnerTwo">
+        <h3 onclick="switch_content('third')">什麼是記憶體RAM?</h3>
+        <div id="third">
+          <p>RAM被稱作「隨機存取記憶體」（Random-Access Memory），屬於揮發性記憶體，也就是當電源切斷後，所儲存的資料將會消失。而其主要功能是讓電腦的程序指令能夠在短暫時間內，迅速並連貫的進行處理，且皆可按照任意的順序進行短暫存取，所以下次當我們單獨聽到RAM這個字詞，就可以馬上理解RAM是什麼意思了。</p>
+          
+        </div>
+      </div>
+      <div class="qalistBodyInnerTwo">
+        <h3 onclick="switch_content('third2')">電腦記憶體RAM與硬碟有什麼不同？</h3>
+        <div id="third2">
+          <p>硬碟的作用在於，它不會像記憶體一樣，只要將進行中的程式關閉或是切斷電源，就遺失掉資料檔案，所以硬碟是一種在未損壞的情況下，可以永久儲存資料的裝置。</p>
+          
+        </div>
+      </div>
+    </div>
+    <div class="qalistBodyInner" id="qafour">
+      <div class="qalistBodyInnerTwo">
+        <h3 onclick="switch_content('fourth')">內容4 內容4 內容4 內容4</h3>
+        <div id="fourth">
+          <p>內容4 內容4 內容4 內容4</p>
+          <p>內容4 內容4 內容4 內容4</p>
+          <p>內容4 內容4 內容4 內容4</p>
+        </div>
+      </div>
+      <div class="qalistBodyInnerTwo">
+        <h3 onclick="switch_content('fourth2')">內容4 內容4 內容4 內容4</h3>
+        <div id="fourth2">
+          <p>內容4 內容4 內容4 內容4</p>
+          <p>內容4 內容4 內容4 內容4</p>
+          <p>內容4 內容4 內容4 內容4</p>
+        </div>
+      </div>
+      <div class="qalistBodyInnerTwo">
+        <h3 onclick="switch_content('fourth3')">內容4 內容4 內容4 內容4</h3>
+        <div id="fourth3">
+          <p>內容4 內容4 內容4 內容4</p>
+          <p>內容4 內容4 內容4 內容4</p>
+          <p>內容4 內容4 內容4 內容4</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // var qalistTitle = document.querySelectorAll(".qalistTitle .qalistTitleUl .active")
+    var qalistBody = document.querySelectorAll(".qalistBody .qalistBodyInner ")
+    // console.log(qalistTitle);
+    // console.log(qalistBody);
+    function showPanel(x, y) {
+      // console.log(panelIndex);
+      // console.log(colorCode);
+      // qalistTitle.forEach(function(a){
+      //   a.style.backgroundColor = "";
+      //   a.style.color = "";
+      // });
+      // qalistTitle[panelIndex].style.backgroundColor = colorCode;
+      // qalistTitle[panelIndex].style.color = "white";
+
+      qalistBody.forEach(function (a) {
+        a.style.display = "none";
+      });
+      qalistBody[x].style.display = "block";
+      qalistBody[x].style.display = y;
+
+    }
+    showPanel(0);
+    // showPanel(1);
+    // showPanel(2);
+    // showPanel(3);
+
+  </script>
+
+  <!-- 改成for迴圈的寫法，試著連接資料庫  -->
+  <!-- https://ithelp.ithome.com.tw/articles/10228825 -->
+
+
+  <!-- 隱藏與顯示內容JS -->
+  <script>
+    window.onload = function () { hide_all(); };
+
+    function switch_content(str) {
+      var obj = document.getElementById(str);
+
+      if (obj.style.display == 'none') {
+        obj.style.display = 'block';
+      } else {
+        obj.style.display = 'none';
+      }
+    }
+
+    function hide_all() {
+      document.getElementById('first').style.display = 'none';
+      document.getElementById('first2').style.display = 'none';
+      document.getElementById('second').style.display = 'none';
+      document.getElementById('second2').style.display = 'none';
+      document.getElementById('third').style.display = 'none';
+      document.getElementById('third2').style.display = 'none';
+      document.getElementById('fourth').style.display = 'none';
+      document.getElementById('fourth2').style.display = 'none';
+      document.getElementById('fourth3').style.display = 'none';
+    }
+  </script>
+
+
+
+  <footer id="footer">
+    <i id="L" class="fa-solid fa-l"></i>
+    <i id="T" class="fa-solid fa-t"></i>
+    <p>Welcome to the LAPTOP.</p>
+    <h6>LAPTOP's Website © 2023 Copyright</h6>
+  </footer>
+
+  <!-- 電腦元件背景 -->
+  <!-- <script src="script.js"></script> -->
+</body>
+
+</html>
+
+
+<!-- jquery 頁面切換 -->
+
+<!-- How To Swap Image In Click Using JQUERY -->
+<!-- 資料來源：https://www.youtube.com/watch?v=Dh6uQuRgZ0g -->
+
+
+<!-- JS切換 -->
+<!-- https://www.youtube.com/watch?v=PzSxehu4G78 -->

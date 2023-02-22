@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+
+:root {
+    --yellow: #fed330;
+    --red: #e74c3c;
+    --white: #fff;
+    --black: #222;
+    --light-color: #777;
+    --border: 3px solid var(--black);
+}
+
+* {
+    font-family: 'Rubik', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+/* scrollbar style starts */
+
+/* scrollbar長、寬 */
+::-webkit-scrollbar {
+    height: 8px;
+    width: 16px;
+}
+
+/* scrollbar軌道的樣式 */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    /* background-color: var(--light-color); */
+    background-color: transparent;
+    /* 透明 */
+}
+
+/* scrollbar樣式 */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--light-color);
+}
+
+/* scrollbar style end */
+
+
+
+/* user btn style start */
+.btn,
+.delete-btn {
+    /* margin-top: 8px; */
+    display: inline-block;
+    font-size: 20px;
+    padding: 1rem;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+}
+
+.btn {
+    background-color: var(--yellow);
+    color: var(--white);
+}
+
+.delete-btn {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.btn:hover,
+.delete-btn:hover {
+    letter-spacing: 3px;
+}
+
+/* user btn style end */
+
+
+
+/* Navbar style starts */
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--black);
+    height: 65px;
+}
+
+.header .flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* 對齊交錯軸線中央 */
+    justify-content: space-between;
+    /* 對齊主軸的中間 */
+    position: relative;
+    margin: 0px 50px;
+    /* background-color: var(--red); */
+}
+
+/* navbar logo */
+.header .flex .logo img {
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 50px;
+    height: 65px;
+    object-fit: cover;
+    margin: 2.5px 0px;
+    /* z-index: 10; */
+}
+
+/* navbar menu */
+ul {
+    list-style-type: none;
+}
+
+.nav {
+    /* background-color: #fed330;  */
+    text-align: center;
+    /* 置中 */
+}
+
+.nav__list {
+    /* background-color: var(--yellow); */
+    display: inline-block;
+    /* 更改ul為行內元素*/
+}
+
+.nav__menu {
+    float: left;
+    /* 往左浮動 */
+    width: 140px;
+    height: 65px;
+    line-height: 65px;
+    /* 行距 */
+    background-color: var(--black);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav__menu:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.nav__menu:hover>.nav__menu-lists li {
+    display: block;
+}
+
+@keyframes menu1 {
+    from {
+        opacity: 0;
+        transform: rotateX(-180deg);
+        /* rotate: 平面旋轉|XYZ軸|deg角度、rad弧度、grad梯度(gradient)、turn */
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+
+.nav__menu:hover>.nav__menu-lists li:nth-child(1) {
+    opacity: 0;
+    /*設定 透明度0.0(透明)-1.0(不透明)*/
+    animation: menu1 ease-in-out forwards;
+    /* animation-name:套用的動畫keyframe名稱
+     animation-timing-function:影片加速速率
+       → ease、ease-in、ease-in-out、linear…
+     animation-fill-mode:定義動畫在播放完成的停留呈現狀態
+       → forwards(停留在結束的狀態)、backwards(停留在剛開始的狀態)、both(依據開始或結束決定呈現的狀態) 
+  */
+    animation-duration: 300ms;
+    /* 動畫持續時間(s秒、ms毫秒):決定動畫演示一次的時間長短*/
+    animation-delay: 0ms;
+    /* 第一次播放動畫時所延遲的時間 */
+}
+
+.nav__menu:hover>.nav__menu-lists li:nth-child(2) {
+    opacity: 0;
+    animation: menu1 ease-in-out forwards;
+    animation-duration: 300ms;
+    animation-delay: 150ms;
+}
+
+.nav__menu:hover>.nav__menu-lists li:nth-child(3) {
+    opacity: 0;
+    animation: menu1 ease-in-out forwards;
+    animation-duration: 300ms;
+    animation-delay: 300ms;
+}
+
+.nav__menu:hover>.nav__menu-lists li:nth-child(4) {
+    opacity: 0;
+    animation: menu1 ease-in-out forwards;
+    animation-duration: 300ms;
+    animation-delay: 450ms;
+}
+
+.nav__menu:hover>.nav__menu-lists li:nth-child(5) {
+    opacity: 0;
+    animation: menu1 ease-in-out forwards;
+    animation-duration: 300ms;
+    animation-delay: 600ms;
+}
+
+.nav__menu-lists {
+    perspective: 5000px;
+    /* 透視效果 */
+}
+
+.nav__menu-items {
+    display: none;
+    width: 140px;
+    height: 65px;
+    background-color: var(--black);
+}
+
+.nav__menu-items a {
+    color: var(--white);
+}
+
+.nav__menu-items:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.nav__menu-items a:hover {
+    color: var(--black);
+}
+
+/* navbar icons */
+.header .flex .icons>* {
+    margin-left: 20px;
+    font-size: 30px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.header .flex .icons>*:hover {
+    color: var(--yellow);
+}
+
+/* navbar user */
+.header .flex .profile {
+    background-color: var(--black);
+    /* border: var(--border); */
+    padding: 12px;
+    text-align: center;
+    position: absolute;
+    top: 120%;
+    right: 0px;
+    width: 270px;
+    display: none;
+    animation: fadeIn .2s linear;
+}
+
+.header .flex .profile.active {
+    display: inline-block;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(1rem);
+    }
+}
+
+.header .flex .profile .name {
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.header .flex .profile .account {
+    margin-top: 12px;
+    font-size: 20px;
+    color: var(--white);
+}
+
+.header .flex .profile .account a {
+    color: var(--white);
+}
+
+.header .flex .profile .account a:hover {
+    color: var(--yellow);
+    text-decoration: underline;
+}
+
+/* Navbar style end */
